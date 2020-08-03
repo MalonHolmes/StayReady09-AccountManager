@@ -4,12 +4,17 @@ import java.time.LocalDate;
 
 public class CheckingAccount extends BankAccount{
 
-    protected CheckingAccount(Integer acctNum, double balance, double fees, String name, LocalDate dateOpened) {
-        super(acctNum, balance, fees, name, dateOpened);
+    protected CheckingAccount(Integer acctNum, double balance, double fees, String name,
+                              int pin, LocalDate dateOpened) {
+        super(acctNum, balance, fees, name, pin, dateOpened);
     }
 
     public void setName(String name){
         this.name = name;
+    }
+
+    public void setPin(int pin){
+        this.pin = pin;
     }
 
     public Integer getAcctNum(){
@@ -26,6 +31,10 @@ public class CheckingAccount extends BankAccount{
 
     public String getName(){
         return name;
+    }
+
+    public int getPin(){
+        return pin;
     }
 
     public void deposit(Double money){

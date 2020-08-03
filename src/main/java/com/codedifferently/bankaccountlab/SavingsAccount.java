@@ -6,9 +6,14 @@ public class SavingsAccount extends BankAccount{
 
     private double rate;
 
+    protected SavingsAccount(){
+        this(1,0.0,10.0,
+                "Reuel", 1234, 0.1, LocalDate.now());
+    }
+
     protected SavingsAccount(Integer acctNum, double balance, double fees, String name,
-                             LocalDate dateOpened) {
-        super(acctNum, balance, fees, name, dateOpened);
+                             int pin,double rate, LocalDate dateOpened) {
+        super(acctNum, balance, fees, name, pin, dateOpened);
         this.rate = rate;
     }
 
@@ -17,7 +22,11 @@ public class SavingsAccount extends BankAccount{
     }
 
     public void setName(String name){
-        this.name = name;
+         this.name = name;
+    }
+
+    public void setPin(int pin){
+        this.pin = pin;
     }
 
     public Integer getAcctNum(){
@@ -35,6 +44,8 @@ public class SavingsAccount extends BankAccount{
     public String getName(){
         return name;
     }
+
+    public int getPin() { return pin;}
 
     public double getRate(){
         return rate;

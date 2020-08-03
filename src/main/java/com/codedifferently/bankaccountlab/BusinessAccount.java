@@ -7,9 +7,9 @@ public class BusinessAccount extends BankAccount {
     private String company;
     private int taxId;
 
-    protected BusinessAccount(Integer acctNum, double balance, double fees, String name,
+    protected BusinessAccount(Integer acctNum, double balance, double fees, String name, int pin,
                               LocalDate dateOpened, String company, int taxId) {
-        super(acctNum, balance, fees, name, dateOpened);
+        super(acctNum, balance, fees, name, pin, dateOpened);
         this.company = company;
         this.taxId = taxId;
     }
@@ -26,6 +26,10 @@ public class BusinessAccount extends BankAccount {
         this.name = name;
     }
 
+    public void setPin(int pin){
+        this.pin = pin;
+    }
+
     public Integer getAcctNum(){
         return acctNum;
     }
@@ -40,6 +44,10 @@ public class BusinessAccount extends BankAccount {
 
     public String getName(){
         return name;
+    }
+
+    public int getPin(){
+        return pin;
     }
 
     public String getCompany(){
